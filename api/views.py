@@ -6,7 +6,7 @@ from datetime import datetime
 
 def generate_datetime():
 
-    return datetime.now().isoformat()
+    return datetime.utcnow().isoformat(timespec='seconds') + 'Z'
 
 
 # Create your views here.
