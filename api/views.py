@@ -17,9 +17,10 @@ class CustomView(views.APIView):
         print(generate_datetime())
 
         response = {
-            "github_url" : "https://github.com/Asuraking913/HNG-backend-track", 
             "email" : "israelshedrack913@gmail.com", 
-            "current_datetime" : str(generate_datetime())
+            "current_datetime" : str(generate_datetime()),
+
+            "github_url" : "https://github.com/Asuraking913/HNG-backend-track"
         }
 
         return Response(response, status=status.HTTP_200_OK)
