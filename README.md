@@ -94,6 +94,14 @@ Use Postman, a browser, or curl to send a request and check the response:
 
 curl http://127.0.0.1:8000/
 
+## Response 
+  {
+  "email": "israelshedrack913@gmail.com",
+  "github": "https://github.com/Asuraking913/HNG-backend-track",
+  "datetime": "date-time"
+  }
+
+
 
 ## 🚀 Deployment <a name = "deployment">Vercel</a>
 
