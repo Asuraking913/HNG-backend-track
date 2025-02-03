@@ -48,7 +48,7 @@ class HandleNumberView(views.APIView):
             "number" : number, 
             "is_prime" : is_prime,
             "is_perfect" : True if is_perfect == number else False, 
-            "properties" : ['armstrong', "odd"],
+            "properties" : properties,
             "digit_sum" : digit_sum, 
             "fun_fact" : f"{response_text}"
             }
