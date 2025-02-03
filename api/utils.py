@@ -39,3 +39,14 @@ def handle_properties(number):
         properties.append('odd')
 
     return properties
+
+def handle_sum(number):
+    individual_nums = []
+    
+    if len(str(number)) <= 1:
+        return number
+    else:
+        for num in str(number):
+            if int(num) != 0 and int(num) < number:
+                individual_nums.append(int(num))
+        return sum(individual_nums)

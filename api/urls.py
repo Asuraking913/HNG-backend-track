@@ -3,5 +3,5 @@ from .views import CustomView, HandleNumberView
 
 urlpatterns = [
     path("", CustomView.as_view(), name="Custom View"), 
-    path("api/", HandleNumberView.as_view(), name='number view')
+    path("api/classify-number", HandleNumberView.as_view(), name='number view')
 ]
