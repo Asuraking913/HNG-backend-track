@@ -53,10 +53,11 @@ class HandleNumberView(views.APIView):
             "fun_fact" : f"{response_text}"
             }
             
-            return Response({"msg" : response})
+            return Response(response)
 
         except ValueError:
-            return Response({
+            response = {
                 "number" : "alphabet", 
                 "error" : "true"
-            }, status=status.HTTP_400_BAD_REQUEST)
+            }
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
