@@ -1,11 +1,20 @@
 def handle_prime(number):
     if number < 2:
         return False
-    else:
-        if number % 2 != 0 and number % 3 != 0:
-            return True
-        else:
+    if number in (2, 3):
+        return True
+    if number % 2 == 0 or number % 3 == 0:
+        return False
+    
+    # Check divisibility up to sqrt(number)
+    i = 5
+    while i * i <= number:
+        if number % i == 0 or number % (i + 2) == 0:
             return False
+        i += 6  # Skip even numbers
+    
+    return True
+
 
 def handle_perfect(number):
     list_divisors = []
