@@ -18,11 +18,8 @@ class CustomView(views.APIView):
 
     def get(self, *args, **kwargs):
 
-        print(generate_datetime())
 
         response = {
-            # "email" : "israelshedrack913@gmail.com", 
-            # "current_datetime" : str(generate_datetime()),
             "message" : "Stage Two Task",
 
             "github_url" : "https://github.com/Asuraking913/HNG-backend-track"
@@ -38,7 +35,6 @@ class HandleNumberView(views.APIView):
 
         try:
             number = int(request.query_params.get('number'))
-            # is_prime = False
 
             is_prime = handle_prime(number)
             is_perfect = handle_perfect(number)
@@ -60,4 +56,7 @@ class HandleNumberView(views.APIView):
             return Response({"msg" : response})
 
         except ValueError:
-            return Response({"msg" : "testing"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"msg" : {
+                "number" : "alphabet", 
+                "error" : "true"
+            }}, status=status.HTTP_400_BAD_REQUEST)
