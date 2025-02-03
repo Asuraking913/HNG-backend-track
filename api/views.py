@@ -56,7 +56,7 @@ class HandleNumberView(views.APIView):
             return Response({"msg" : response})
 
         except ValueError:
-            return Response({"msg" : {
+            return Response({
                 "number" : "alphabet", 
                 "error" : "true"
-            }}, status=status.HTTP_400_BAD_REQUEST)
+            }, status=status.HTTP_400_BAD_REQUEST)
