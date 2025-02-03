@@ -55,7 +55,7 @@ class HandleNumberView(views.APIView):
             
             return Response(response)
 
-        except ValueError or TypeError:
+        except:
             response = {
                 "number" : "alphabet", 
                 "error" : True
