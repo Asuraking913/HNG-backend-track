@@ -61,12 +61,10 @@ def handle_properties(number):
 
 def handle_sum(number):
 
-    if number < 0:
-        return number + 3
-
+    number = abs(number)
     individual_nums = []
     
-    if len(str(number)) <= 1:
+    if len(str(abs(number))) <= 1:
         return number
     else:
         for num in str(number):
