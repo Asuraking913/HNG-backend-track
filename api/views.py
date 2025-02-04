@@ -35,13 +35,13 @@ class HandleNumberView(views.APIView):
 
         try:
             number = int(request.query_params.get('number'))
-
+    
             is_prime = handle_prime(number)
             is_perfect = handle_perfect(number)
             properties = handle_properties(number)
             digit_sum = handle_sum(number)
             
-            response_text = api_class.get_fun_fact(number)
+            # response_text = api_class.get_fun_fact(number)
 
 
             response = {
@@ -50,12 +50,13 @@ class HandleNumberView(views.APIView):
             "is_perfect" : True if is_perfect == number else False, 
             "properties" : properties,
             "digit_sum" : digit_sum, 
-            "fun_fact" : f"{response_text}"
+            # "fun_fact" : f"{response_text}"
             }
             
             return Response(response)
 
-        except:
+        except Exception as error:
+            print({"error" : error})
             response = {
                 "number" : "alphabet", 
                 "error" : True

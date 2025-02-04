@@ -1,4 +1,8 @@
 def handle_prime(number):
+
+    if number < 0:
+        return False
+
     if number < 2:
         return False
     if number in (2, 3):
@@ -17,6 +21,10 @@ def handle_prime(number):
 
 
 def handle_perfect(number):
+    
+    if number < 0:
+        return number + 3
+
     list_divisors = []
 
     for numbers in range(number):
@@ -26,14 +34,16 @@ def handle_perfect(number):
     return sum(list_divisors)
 
 def handle_properties(number):
+
     properties = []
     individual_nums = []
 
     # handle armstrong
     # Split individual digits
-    for num in str(number):
-        if int(num) != 0 and int(num) < number:
-            individual_nums.append(num)
+    if int(number) > 0:
+        for num in str(number):
+            if int(num) != 0 and int(num) < number:
+                individual_nums.append(num)
     
     new_nums = [int(num) ** len(str(number)) for num in individual_nums]
     new_nums = sum(new_nums)
@@ -50,6 +60,10 @@ def handle_properties(number):
     return properties
 
 def handle_sum(number):
+
+    if number < 0:
+        return number + 3
+
     individual_nums = []
     
     if len(str(number)) <= 1:
